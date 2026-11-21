@@ -25,9 +25,9 @@ content={
  },
  'nutrition-guide':{
   'headline':'Bring more intention to everyday meals.',
-  'focus':'Everyday nutrition',
-  'intro':'Explore a digital guide designed around everyday food choices. Bring your nutrition goals into focus and make space for more thoughtful meal planning.',
-  'benefits':['An everyday nutrition focus','A digital guide format','A companion to your fitness goals','Space to plan your meals','One-time purchase'],
+  'focus':'Everyday meal planning',
+  'intro':'Explore a digital guide designed around everyday food choices. Bring your meal planning goals into focus and make space for more thoughtful meal planning.',
+  'benefits':['An everyday meal planning focus','A digital guide format','A companion to your fitness goals','Space to plan your meals','One-time purchase'],
   'steps':[('Start with your habits','Think about the food choices and meal routines you would like to explore.'),('Preview the guide','The contents and sample pages will be added here before the guide launches.'),('Put your plans into practice','Use your goals as a starting point for building a more intentional everyday food routine.')],
  }
 }
@@ -48,7 +48,7 @@ for item in catalog:
 <section class="preview-details wrap">
 <aside class="preview-sidebar" aria-label="Programme access and purchase">
 <h2>{'Guide access' if key=='nutrition-guide' else 'Class access'}</h2>
-<div class="access-card"><h3>{'Digital guide' if key=='nutrition-guide' else 'At your own pace'}</h3><p>{'Explore nutrition in your own time.' if key=='nutrition-guide' else 'Prerecorded classes to fit around your routine.'}</p><span>No live timetable</span></div>
+<div class="access-card"><h3>{'Digital guide' if key=='nutrition-guide' else 'At your own pace'}</h3><p>{'Explore meal planning in your own time.' if key=='nutrition-guide' else 'Prerecorded classes to fit around your routine.'}</p><span>No live timetable</span></div>
 <div class="access-card"><h3>One-on-one mentorship</h3><p>Coming soon</p><span>Bookings are not open yet.</span></div>
 <div class="preview-purchase"><span class="eyebrow">ONE-TIME PURCHASE</span><strong>{price}</strong><form class="fit-add-form" data-product="{key}"><label for="quantity">Quantity</label><input id="quantity" name="quantity" type="number" min="1" max="10" value="1" required><button class="button" type="submit">Add to cart</button></form><p class="fit-cart-status" role="status" aria-live="polite"></p><a class="text-link" href="cart.html">View cart (<span data-cart-count>0</span>)</a><p class="demo-message">Demo checkout only. No payment is taken and no course access is issued.</p></div>
 </aside>
@@ -62,6 +62,6 @@ for item in catalog:
 <a class="preview-person" href="about.html"><img src="images/fitislit/community-workout.jpg" alt="The Fit is Lit community working out together" loading="lazy"><h3>Movement & community</h3><p>Make room for your goals</p></a>
 <article class="preview-person"><img src="images/fitislit/coaching-sheba.jpg" alt="Sheba in a gym coaching scene" loading="lazy"><h3>One-on-one mentorship</h3><p>Coming soon</p></article>
 </div></section>
-<section class="preview-closing wrap"><div><h2>Your next step starts with Fit is Lit.</h2><p>Movement, nutrition and the everyday commitment to keep going. Find the focus that fits your goals.</p><a class="text-link" href="courses.html">Explore all classes & guides</a><a class="button" href="contact.html">Contact us</a></div><img src="images/fitislit/community-workout.jpg" alt="Outdoor group fitness session" loading="lazy"></section>
+<section class="preview-closing wrap"><div><h2>Your next step starts with Fit is Lit.</h2><p>Movement, meal planning and the everyday commitment to keep going. Find the focus that fits your goals.</p><a class="text-link" href="courses.html">Explore all classes & guides</a><a class="button" href="contact.html">Contact us</a></div><img src="images/fitislit/community-workout.jpg" alt="Outdoor group fitness session" loading="lazy"></section>
 </main>'''
  (root/f'{key}.html').write_text(h+main+footer)

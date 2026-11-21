@@ -21,11 +21,11 @@
   },
   {
     "id": "nutrition-guide",
-    "name": "Nutrition Guide",
+    "name": "Meal Plan",
     "type": "Digital guide",
     "image": "../stock/nutrition-640.webp",
     "line": "Make everyday food choices simpler.",
-    "desc": "Explore everyday nutrition and bring more intention to your meals.",
+    "desc": "Explore everyday meal planning and bring more intention to your meals.",
     "price": 135200,
     "currency": "NGN"
   }

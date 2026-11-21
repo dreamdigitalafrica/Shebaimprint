@@ -15,7 +15,7 @@
  var offers={
  'Weight Gain':'Explore a programme focused on your weight-gain goals. Programme contents, duration, suitability and pricing will be confirmed before enrolment.',
  'Weight Loss':'Explore a programme focused on your weight-loss goals. Programme contents, duration, suitability and pricing will be confirmed before enrolment.',
- 'Nutrition Guide':'Explore general nutrition education for everyday food choices. Guide contents, access and pricing will be confirmed before purchase.',
+ 'Meal Plan':'Explore general meal planning education for everyday food choices. Guide contents, access and pricing will be confirmed before purchase.',
  'One-on-One':'One-on-one mentorship is coming soon. Booking is not open yet.'
  };
  ['Sports Water Bottle','Men’s Climacool Leap Running Tennis Shoe','Gym Tights','Gym Workout Top'].forEach(function(name){offers[name]='Ask about '+name+'. Confirm size, colour, stock and delivery before ordering.'});

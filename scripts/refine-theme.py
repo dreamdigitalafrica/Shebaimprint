@@ -29,23 +29,23 @@ for n in f.select('.tp-footer-copyright-area .col-xl-3')[-1:]: n.clear()
 s=S((T/'service-details.html').read_text(),'html.parser'); m=s.main
 m.select_one('.tp-service-details-hero-subtitle span').string='Fit is Lit'
 h=m.select_one('.tp-service-details-hero-title h2'); h.name='h1'; h['class']=h.get('class',[])+['sheba-service-title']; h.string='Fitness & Wellbeing'
-for a,(title,url) in zip(m.select('.tp-service-details-hero-link a'),[('Weight Gain','weight-gain.html'),('Weight Loss','weight-loss.html'),('Nutrition Guide','nutrition-guide.html'),('Lit Store','shop.html'),('Podcast','podcast.html'),('Sheba Care','sheba-care.html')]):
+for a,(title,url) in zip(m.select('.tp-service-details-hero-link a'),[('Weight Gain','weight-gain.html'),('Weight Loss','weight-loss.html'),('Meal Plan','nutrition-guide.html'),('Lit Store','shop.html'),('Podcast','podcast.html'),('Sheba Care','sheba-care.html')]):
  a['href']=url; a.span.string=title; a.span['data-text']=title
 for im,stock in zip(m.select('.tp-banner-thumb img'),['studio','community']):
  im['src']=f'images/stock/{stock}-2560.webp'; im['alt']='Movement and community'; im['loading']='lazy'; im['class']=['img-cover','scale-up']
 m.select_one('.tp-process-area h2').string='Find your routine.'
-for item,(title,desc) in zip(m.select('.tp-process-item'),[('Choose your focus','Weight gain, weight loss or everyday nutrition.'),('Find your guide','Browse classes and nutrition resources.'),('Make it yours','Choose a routine that fits your day.'),('Stay connected','Discover conversations and community.')]):
+for item,(title,desc) in zip(m.select('.tp-process-item'),[('Choose your focus','Weight gain, weight loss or everyday meal planning.'),('Find your guide','Browse classes and meal planning resources.'),('Make it yours','Choose a routine that fits your day.'),('Stay connected','Discover conversations and community.')]):
  item.h3.string=title; item.p.string=desc
 p=m.select_one('.tp-process-bottom-para'); p.clear(); p.append(S(f'<a class="tp-btn tp-btn-border" href="{MAIL}">Get in touch</a>','html.parser'))
 m.select_one('.tp-service-overview-top h2').string='Fit is Lit'
-m.select_one('.tp-service-details-dec').string='Classes, nutrition guides and active essentials from Sheba Imprint. Find your next step with Fit is Lit.'
+m.select_one('.tp-service-details-dec').string='Classes, meal plans and active essentials from Sheba Imprint. Find your next step with Fit is Lit.'
 m.select_one('.tp-service-details-title').string='Made for your everyday'
-for p,text in zip(m.select('.tp-service-details-content li p'),['Weight Gain classes','Weight Loss classes','Nutrition Guide','Activewear and workout essentials']): p.string=text
+for p,text in zip(m.select('.tp-service-details-content li p'),['Weight Gain classes','Weight Loss classes','Meal Plan','Activewear and workout essentials']): p.string=text
 im=m.select_one('.tp-service-thumb img'); im['src']='images/stock/yoga-1280.webp'; im['alt']='Women practising yoga'; im['loading']='lazy'
 faqs=m.select('.tp-faq-area')
 for extra in faqs[1:]: extra.decompose()
 faq=faqs[0]; faq.select_one('.tp-faq-subtitle span').string='Good to know'; faq.select_one('h2.tp-section-title').string='Your questions, answered.'
-questions=[('What can I find at Fit is Lit?','Browse Weight Gain and Weight Loss classes, a Nutrition Guide, and active essentials in Lit Store.'),('Are the classes available now?','Course access is not yet available. Contact us for updates.'),('How do I enquire about a product?','Email '+EMAIL+' with the product name and your question.'),('Where can I find the community?','Visit Com. Support for Sheba Care, and the podcast page for upcoming conversations.')]
+questions=[('What can I find at Fit is Lit?','Browse Weight Gain and Weight Loss classes, a Meal Plan, and active essentials in Lit Store.'),('Are the classes available now?','Course access is not yet available. Contact us for updates.'),('How do I enquire about a product?','Email '+EMAIL+' with the product name and your question.'),('Where can I find the community?','Visit Com. Support for Sheba Care, and the podcast page for upcoming conversations.')]
 for idx,item in enumerate(faq.select('.tp-faq-item')):
  if idx>=len(questions): item.decompose(); continue
  q,a=questions[idx]; item.button.string=f'{idx+1:02}. {q}'; item.select_one('.tp-faq-body').clear(); item.select_one('.tp-faq-body').append(S('<p>'+a+'</p>','html.parser'))

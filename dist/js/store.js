@@ -1,5 +1,5 @@
 (function(){'use strict';
-var catalog={'weight-gain':{name:'Weight Gain',image:'../stock/studio-640.webp'},'weight-loss':{name:'Weight Loss',image:'../stock/rope-640.webp'},'nutrition-guide':{name:'Nutrition Guide',image:'../stock/nutrition-640.webp'}};
+var catalog={'weight-gain':{name:'Weight Gain',image:'../stock/studio-640.webp'},'weight-loss':{name:'Weight Loss',image:'../stock/rope-640.webp'},'nutrition-guide':{name:'Meal Plan',image:'../stock/nutrition-640.webp'}};
 Object.assign(catalog,{"sports-water-bottle": {"name": "Sports Water Bottle", "image": "../products/sports-water-bottle.webp", "price": 154700}, "running-shoes": {"name": "Men\u2019s Climacool Leap Running Tennis Shoe", "image": "../products/running-shoes.webp", "price": 284500}, "gym-tights": {"name": "Gym Tights", "image": "../products/gym-tights.webp", "price": 97800}, "gym-workout-top": {"name": "Gym Workout Top", "image": "../products/gym-workout-top.webp", "price": 332500}});
 var cart={};try{cart=JSON.parse(localStorage.getItem('fit-demo-cart')||'{}')}catch(e){}if(!cart||typeof cart!=='object'||Array.isArray(cart))cart={};
 Object.keys(cart).forEach(function(k){if(!Object.prototype.hasOwnProperty.call(catalog,k)||!Number.isInteger(cart[k])||cart[k]<1)delete cart[k];else cart[k]=Math.min(10,cart[k]);});
