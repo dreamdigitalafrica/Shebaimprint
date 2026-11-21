@@ -45,7 +45,7 @@ im=m.select_one('.tp-service-thumb img'); im['src']='images/stock/yoga-1280.webp
 faqs=m.select('.tp-faq-area')
 for extra in faqs[1:]: extra.decompose()
 faq=faqs[0]; faq.select_one('.tp-faq-subtitle span').string='Good to know'; faq.select_one('h2.tp-section-title').string='Your questions, answered.'
-questions=[('What can I find at Fit is Lit?','Browse Weight Gain and Weight Loss classes, a Meal Plan, and active essentials in Lit Store.'),('Are the classes available now?','Course access is not yet available. Contact us for updates.'),('How do I enquire about a product?','Email '+EMAIL+' with the product name and your question.'),('Where can I find the community?','Visit Com. Support for Sheba Care, and the podcast page for upcoming conversations.')]
+questions=[('What can I find at Fit is Lit?','Browse Weight Gain and Weight Loss classes, a Meal Plan, and active essentials in Lit Store.'),('Are the classes available now?','Course access is not yet available. Contact us for updates.'),('How do I enquire about a product?','Email '+EMAIL+' with the product name and your question.'),('Where can I find the community?','Visit Sheba Care for Sheba Care, and the podcast page for upcoming conversations.')]
 for idx,item in enumerate(faq.select('.tp-faq-item')):
  if idx>=len(questions): item.decompose(); continue
  q,a=questions[idx]; item.button.string=f'{idx+1:02}. {q}'; item.select_one('.tp-faq-body').clear(); item.select_one('.tp-faq-body').append(S('<p>'+a+'</p>','html.parser'))
