@@ -37,3 +37,15 @@ footer.sheba-footer{display:block;width:100%;max-width:none;margin:0;padding:0;b
 .sheba-footer .tp-footer-text{container-type:inline-size}
 .sheba-footer .tp-footer-bigtext{font-size:clamp(40px,16cqw,180px);white-space:nowrap}
 .sheba-footer .tp-footer-email a{font-size:clamp(23px,2.2vw,32px)}
+/* Cunnet shop homepage photography retains the source frames. */
+.shop-home-page .shop-hero-thumb img{aspect-ratio:918/750;object-fit:cover}
+.shop-home-page .shop-hero-item-3 .shop-hero-thumb img{aspect-ratio:1856/750}
+.shop-home-page .shop-cetagory-item img{aspect-ratio:598/600;object-fit:cover}
+.shop-home-page .shop-hero-content{z-index:1}
+.shop-home-page .shop-hero-thumb::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.65),transparent 75%);pointer-events:none}
+.shop-home-page .shop-hero-content,.shop-home-page .shop-hero-content a,.shop-home-page .shop-hero-dec{color:white}
+.shop-home-page .shop-hero-content .shop-btn{background:white;color:#1e1e1e}
+@media(min-width:992px){.site-header nav a{padding-inline:12px}}
+.sheba-about-page .about-me-slider-thumb img{width:100%;aspect-ratio:930/600;object-fit:cover}
+.sheba-about-page .tp-about-thumb img{width:100%;aspect-ratio:440/480;object-fit:cover;object-position:center top}
+.sheba-about-page .tp-about-area{padding-bottom:100px}

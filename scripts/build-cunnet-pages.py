@@ -103,3 +103,5 @@ for path in D.glob('*.html'):
 # Apply the shared theme refinements after regenerating the catalogue.
 import subprocess, sys
 subprocess.run([sys.executable, str(ROOT/"scripts/refine-theme.py")], check=True)
+subprocess.run([sys.executable, str(ROOT/"scripts/update-shop-home.py")], check=True)
+subprocess.run([sys.executable, str(ROOT/"scripts/update-about.py")], check=True)
