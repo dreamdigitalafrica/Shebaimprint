@@ -1,0 +1,10 @@
+/* Preserve Cunnet blog-list geometry; scope corrections to the podcast. */
+.podcast-page .tp-banner-thumb{position:relative;isolation:isolate}
+.podcast-page .tp-banner-thumb img{display:block;width:100%;height:100%;aspect-ratio:auto;object-fit:cover;object-position:50% 48%;will-change:transform}
+.podcast-page .postbox-thumb{overflow:hidden;border-radius:14px}
+.podcast-page .postbox-thumb img{aspect-ratio:835/686;transition:transform .6s ease}
+.podcast-page .tp-blog-list-thumb img{aspect-ratio:780/416;transition:transform .6s ease}
+.podcast-page .tp-list-area{padding-top:0}
+@media(hover:hover){.podcast-page .postbox-item:hover .postbox-thumb img,.podcast-page .tp-blog-list-item:hover .tp-blog-list-thumb img{transform:scale(1.04)}}
+@media(max-width:767px){.podcast-page .tp-breadcrumb-dec-wrap{flex-wrap:wrap;gap:16px}.podcast-page .tp-breadcrumb-date{margin-right:0}.podcast-page .tp-banner-thumb img{object-position:center}.podcast-page .tp-list-area{padding-bottom:60px}}
+@media(prefers-reduced-motion:reduce){.podcast-page .tp-banner-thumb img{will-change:auto}.podcast-page .postbox-thumb img,.podcast-page .tp-blog-list-thumb img{transition:none;transform:none!important}}

@@ -105,3 +105,5 @@ import subprocess, sys
 subprocess.run([sys.executable, str(ROOT/"scripts/refine-theme.py")], check=True)
 subprocess.run([sys.executable, str(ROOT/"scripts/update-shop-home.py")], check=True)
 subprocess.run([sys.executable, str(ROOT/"scripts/update-about.py")], check=True)
+
+subprocess.run([sys.executable, str(ROOT/"scripts/update-podcast.py")], check=True)
