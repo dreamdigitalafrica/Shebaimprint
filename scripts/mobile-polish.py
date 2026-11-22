@@ -32,3 +32,20 @@ for name in ['index.html','home-preview.html']:
  if a:
   a['href']='about-me.html';a['aria-label']='Meet Sheba';a.img['alt']='Faith Sheba Gamde, founder of Sheba Imprint'
  p.write_text(str(s))
+# Keep the supplied people untouched; extend only the presentation background.
+for name in ['index.html','home-preview.html']:
+ p=D/name;s=S(p.read_text(),'html.parser')
+ for index,file,alt in [('0','sheba-original.png','Faith Sheba Gamde'),('2','community-original.jpg','Sheba community fitness session')]:
+  for frame in s.select(f'.spotlight-background[data-index="{index}"],.thumbs[data-index="{index}"]'):
+   frame['class']=list(dict.fromkeys(frame.get('class',[])+['original-photo-frame']))
+   frame['style']=f"--photo-fill:url('/images/brand/{file}')"
+   # Inline custom properties resolve relative to the stylesheet using them.
+   img=frame.select_one('img')
+   for attr in ['srcset','data-src','width','height']:img.attrs.pop(attr,None)
+   img['src']=f'images/brand/{file}';img['alt']=alt;img['style']='object-fit:contain;object-position:center'
+ p.write_text(str(s))
+p=D/'about-me.html';s=S(p.read_text(),'html.parser');img=s.select_one('.founder-landscape')
+for attr in ['srcset','width','height']:img.attrs.pop(attr,None)
+img['src']='images/brand/sheba-original.png'
+img['style']='object-fit:contain'
+p.write_text(str(s))

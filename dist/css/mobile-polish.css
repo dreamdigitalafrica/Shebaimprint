@@ -14,3 +14,8 @@ main img{max-width:100%}
 .founder-landscape{aspect-ratio:4/3;object-fit:contain;background:#eee9e2}
 }
 @media(prefers-reduced-motion:reduce){.scale-up,.tp_fade_anim{transform:none!important;opacity:1!important}}
+/* Landscape presentation preserves the original photograph and every subject. */
+.original-photo-frame{isolation:isolate;overflow:hidden;background:#e8e5df}
+.original-photo-frame::before{content:"";position:absolute;inset:-30px;background-image:var(--photo-fill);background-size:cover;background-position:center;filter:blur(24px);opacity:.55;z-index:-1;pointer-events:none}
+.original-photo-frame img{position:relative;object-fit:contain!important}
+.spotlight-gallery .original-photo-frame img{width:100%;aspect-ratio:16/9}
