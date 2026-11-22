@@ -1,0 +1,94 @@
+"""Apply reviewed brand copy without changing product facts or availability."""
+from pathlib import Path
+from bs4 import BeautifulSoup
+R=Path(__file__).resolve().parents[1]
+COPY={
+'Live in Motion':'Impact that outlives',
+'Fitness, meal planning and style for everyday life.':'Build confidence through movement, thoughtful meal planning and a community that grows with you.',
+'Move with purpose. Live with confidence.':'Small steps today. A lasting imprint tomorrow.',
+'Workout classes and meal plans.':'Make movement and mindful meals part of your everyday life.',
+'Founder of Fit is Lit.':'Founder of Sheba Imprint and Fit is Lit.',
+'Fitness Shop':'Lit Store',
+'Find your fit.':'Make your next step count.',
+'Move well. Feel good.':'Build habits that stay with you.',
+'Fitness classes and meal plans for your everyday routine.':'Explore focused fitness programmes and meal planning resources designed around everyday commitment.',
+'Our classes':'Find your starting point',
+'Fitness on your terms.':'Progress begins with a routine you can return to.',
+'Founded by Faith Sheba Gamde, Fit is Lit brings together movement, meal planning and personal support.':'Founded by Faith Sheba Gamde, Fit is Lit connects purposeful movement with practical meal planning, helping you approach your goals with intention.',
+'Make time for you.':'Invest in your everyday wellbeing.',
+'Fit is Lit Store':'Lit Store',
+'Activewear and essentials for your next workout.':'Explore activewear and workout essentials for the moments you choose to show up.',
+'Classes & guides':'Programmes & meal planning',
+'Choose your focus.':'Choose the next step in your routine.',
+'A more personal way to work on your goals. Booking is not open yet.':'Individual guidance is coming soon. Contact us to enquire about future mentorship opportunities.',
+'Movement. Confidence. Community.':'Impact that outlives',
+'Make your mark. Live with purpose.':'The habits we build. The lives we touch.',
+'Movement, wellbeing and community. Through Fit is Lit, Lit Store and Sheba Care, we create space to grow.':'Sheba Imprint brings fitness, everyday wellbeing and community together. Through Fit is Lit, Lit Store and Sheba Care, we encourage choices that build confidence today and create meaning beyond the moment.',
+'Founder of Sheba Imprint and Fit is Lit. Helping you build confidence through movement and consistent everyday habits.':'Faith Sheba Gamde founded Sheba Imprint and Fit is Lit with a focus on purposeful movement, everyday confidence and the strength of community.',
+'I bring movement, wellbeing and community together through Fit is Lit, Lit Store and Sheba Care. My focus is simple: helping you build confidence and make room for the life you want to live.':'I believe the choices we make today can leave a lasting imprint. Through Sheba Imprint, I bring together movement, wellbeing and community—creating space for people to build confidence, pursue their goals and support one another along the way.',
+'Tell us about your goals or ask about our collection.':'Have a question about a programme, a product or working with Sheba Imprint? We would love to hear from you.',
+'Opens your email app with your enquiry.':'Send your enquiry through your email app. Include the programme or product name so we can help.',
+'Community support by Sheba Imprint.':'A shared commitment to care, connection and lasting impact.',
+'Care starts with community.':'A stronger community starts with care.',
+'Our NGO page is taking shape. Programme and participation details will be shared here.':'Sheba Care is the community support initiative of Sheba Imprint. Details of upcoming programmes and ways to take part will be shared here. Contact us to enquire about involvement.',
+'Packages':'Explore our programmes',
+'Package benefits':'Plan your next step',
+'At your pace':'A flexible format',
+'Replay prerecorded classes.':'Explore prerecorded classes that fit around your schedule. Access is not yet available.',
+'Your focus':'A clear focus',
+'Weight Gain, Weight Loss or Meal Plan.':'Choose from Weight Gain, Weight Loss and Meal Plan resources.',
+'Choose the product you want.':'Review each programme and choose the focus that suits your goals.',
+'View the sample before choosing.':'Watch a class preview to explore the approach before making an enquiry.',
+'Classes and guides online.':'Online classes and guides are planned. Contact us for availability updates.',
+'One-on-one mentorship coming soon.':'Individual mentorship is coming soon. Enquire to learn more.',
+'Fitness & Wellbeing':'Movement with purpose',
+'Find your routine.':'Build a routine with lasting value.',
+'Choose your focus':'Start with your goals',
+'Weight gain, weight loss or everyday meal planning.':'Explore programmes focused on weight gain, weight loss or everyday meal planning.',
+'Find your guide':'Explore your options',
+'Browse classes and meal planning resources.':'Discover fitness classes and meal planning resources, and ask us about availability.',
+'Make it yours':'Make room for consistency',
+'Choose a routine that fits your day.':'Find an approach that works with your schedule and your priorities.',
+'Stay connected':'Grow through connection',
+'Discover conversations and community.':'Explore Sheba Care and upcoming conversations on wellbeing and everyday life.',
+'Classes, meal plans and active essentials from Sheba Imprint. Find your next step with Fit is Lit.':'Fit is Lit brings purposeful movement and practical meal planning into one place. Explore our programmes, discover active essentials in Lit Store, and take a considered next step towards your goals.',
+'Visit Sheba Care for Sheba Care, and the podcast page for upcoming conversations.':'Explore Sheba Care for community initiatives, and visit our podcast page for upcoming conversations.',
+'Made for your next move.':'Show up in your own style.',
+'Find your rhythm':'Move with intention',
+'Essentials for an active day.':'Your everyday movement starts here.',
+'Everyday movement':'The everyday edit',
+'Discover Lit Store.':'Find your next workout essential.',
+'Tights and tops for your workout wardrobe.':'Build your workout wardrobe with tights and tops from Lit Store.',
+'Find your next pair.':'Explore footwear for your active wardrobe.',
+'Keep your everyday essentials close.':'Complete your routine with practical workout accessories.',
+'Black bottle. Green lid. Ready for your next workout.':'Keep water close throughout your routine with this black sports bottle, finished with a green lid.',
+'A bright green sleeveless top for your next session.':'Bring a bright accent to your workout wardrobe with this green sleeveless top.',
+'Classic black tights for your workout wardrobe.':'A simple addition to your active wardrobe: black gym tights to pair with your favourite workout top.',
+'Black running shoes with a lime-green sole.':'A black silhouette with a lime-green sole adds a bold finish to your active wardrobe. Contact us for available sizes.',
+'Make room for movement with a programme focused on your weight-loss goals.':'Explore a fitness programme focused on building a consistent movement routine as you work towards your weight-loss goals.',
+'A goal-focused starting point for building a consistent strength-training routine.':'Explore a programme focused on strength-training consistency as you work towards your weight-gain goals.',
+'Explore everyday meal planning and bring more intention to your meals.':'Bring structure to your everyday meals with a resource focused on thoughtful planning and a more consistent routine.',
+'You may also like':'Explore more from Sheba Imprint',
+'Conversations on movement, wellbeing and community.':'Ideas, experiences and conversations that leave a lasting imprint.',
+'Finding a routine that works for you.':'Exploring the habits and choices that help us keep showing up.',
+'Making space for food, rest and feeling good.':'Thoughtful conversations about making room for food, rest and everyday wellbeing.',
+'Better together.':'Every voice can leave an imprint.',
+'Stories and conversations from the Sheba community. Episodes will be shared here.':'Our podcast will explore movement, wellbeing and the connections that shape our lives. Episodes are coming soon. Return here for release updates.',
+'Let’s move forward together.':'Leave a lasting imprint.',
+'Services & Products':'Explore Sheba Imprint',
+'Review your programmes before continuing to demo checkout.':'Review your selections before continuing to the checkout preview.',
+'Try the checkout flow. No real payment or course access will be issued.':'Review your selections in this checkout preview. No payment will be collected and no course access will be issued.',
+'Demo purchases only. No real payment or course access is issued.':'Checkout is currently a preview. No payment is collected or course access provided. Contact us for availability.',
+}
+for p in (R/'dist').glob('*.html'):
+ s=BeautifulSoup(p.read_text(),'html.parser')
+ if not s.select_one('.site-header'):continue
+ for node in list(s.find_all(string=True)):
+  if node.parent.name in ['script','style']:continue
+  value=str(node);key=value.strip()
+  if key in COPY:node.replace_with(value.replace(key,COPY[key]))
+ meta=s.select_one('meta[name="description"]')
+ if meta and p.name in ['index.html','about.html','about-us.html','about-me.html']:
+  meta['content']='Sheba Imprint — Impact that outlives. Explore purposeful movement, meal planning, active essentials and community through Fit is Lit, Lit Store and Sheba Care.'
+ if p.name=='index.html':s.title.string='Sheba Imprint | Impact that outlives'
+ p.write_text(str(s))
