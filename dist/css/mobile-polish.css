@@ -1,0 +1,16 @@
+.founder-landscape{display:block;aspect-ratio:16/9;object-fit:cover;object-position:center;border-radius:16px}
+@media(max-width:767px){
+html,body{max-width:100%;overflow-x:clip}
+.site-header-inner{padding-inline:20px}
+main img{max-width:100%}
+.tp-section-title,.pp-about-title,.about-us-title{font-size:clamp(32px,8vw,56px)!important;line-height:1.12!important;overflow-wrap:break-word}
+.sheba-footer .tp-footer-email{overflow-wrap:anywhere}
+.sheba-theme .about-me-spacing{padding-top:60px;padding-bottom:50px}
+.sheba-theme .pp-about-dec-wrap{margin-left:0}
+.shop-home-page .shop-hero-content{left:24px;right:24px;bottom:24px}
+.shop-home-page .shop-hero-title{font-size:36px}
+.shop-home-page .shop-hero-item-3 .shop-hero-thumb img{aspect-ratio:4/3}
+.tp-btn,button,input,select{min-height:44px}
+.founder-landscape{aspect-ratio:4/3;object-fit:contain;background:#eee9e2}
+}
+@media(prefers-reduced-motion:reduce){.scale-up,.tp_fade_anim{transform:none!important;opacity:1!important}}

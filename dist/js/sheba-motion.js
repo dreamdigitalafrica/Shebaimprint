@@ -5,7 +5,7 @@
   if ([...document.scripts].some(s => /cunnet-assets\/js\/main\.js/.test(s.src))) return;
   gsap.registerPlugin(ScrollTrigger);
   gsap.utils.toArray('.tp_fade_anim').forEach(item => {
-    const offset = Number(item.dataset.fadeOffset || 40);
+    const offset = Number(item.dataset.fadeOffset || 40) * (innerWidth < 768 ? .5 : 1);
     const from = item.dataset.fadeFrom || 'bottom';
     const settings = {opacity:0,duration:Number(item.dataset.duration || .75),delay:Number(item.dataset.delay || .15),ease:item.dataset.ease || 'power2.out'};
     if (from === 'top' || from === 'bottom') settings.y = from === 'top' ? -offset : offset;
@@ -15,7 +15,7 @@
   });
   gsap.utils.toArray('.scale-up-img').forEach(section => {
     const photo=section.querySelector('.scale-up');
-    if(photo) gsap.timeline({scrollTrigger:{trigger:section,start:'top bottom',end:'bottom center',scrub:1}}).to(photo,{scale:1.15,duration:1});
+    if(photo) gsap.timeline({scrollTrigger:{trigger:section,start:'top bottom',end:'bottom center',scrub:1}}).to(photo,{scale:innerWidth < 768 ? 1.05 : 1.15,duration:1});
   });
   window.addEventListener('load', () => ScrollTrigger.refresh(), {once:true});
 })();
