@@ -22,3 +22,7 @@ main img{max-width:100%}
 /* Keep the brand motto balanced at desktop and phone widths. */
 .hero-intro .tp-hero-title{font-size:clamp(44px,8.3vw,140px);white-space:normal;line-height:1.05;text-wrap:balance}
 @media(max-width:767px){.hero-intro .tp-hero-title{font-size:clamp(42px,10vw,72px)}.hero-details .tp-hero-dec{max-width:36ch}}
+.landscape-photo-frame{background:#e9e9e7}
+.spotlight-gallery .landscape-photo-frame img{object-fit:cover!important;object-position:50% 50%!important}
+.spotlight-background.landscape-photo-frame img{object-fit:contain!important}
+@media(max-width:767px){.spotlight-gallery .landscape-photo-frame{min-width:200px}.spotlight-gallery .landscape-photo-frame img{height:auto;aspect-ratio:16/9;object-fit:contain!important}}

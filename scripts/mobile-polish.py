@@ -49,3 +49,14 @@ for attr in ['srcset','width','height']:img.attrs.pop(attr,None)
 img['src']='images/brand/sheba-original.png'
 img['style']='object-fit:contain'
 p.write_text(str(s))
+# Natural landscape extensions replace the temporary blurred side fills.
+for name in ['index.html','home-preview.html','about-me.html']:
+ p=D/name;s=S(p.read_text(),'html.parser')
+ for index,file in [('0','sheba-cafe-landscape.png'),('2','community-landscape.png')]:
+  for frame in s.select(f'.spotlight-background[data-index="{index}"],.thumbs[data-index="{index}"]'):
+   frame['class']=[c for c in frame.get('class',[]) if c!='original-photo-frame']+['landscape-photo-frame']
+   frame.attrs.pop('style',None)
+   img=frame.select_one('img');img['src']=f'images/brand/{file}';img['width']='1672';img['height']='941';img['style']='object-fit:contain;object-position:center'
+ if name=='about-me.html':
+  img=s.select_one('.founder-landscape');img['src']='images/brand/sheba-cafe-landscape.png';img['width']='1672';img['height']='941'
+ p.write_text(str(s))
