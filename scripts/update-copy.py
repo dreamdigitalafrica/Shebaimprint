@@ -3,8 +3,9 @@ from pathlib import Path
 from bs4 import BeautifulSoup
 R=Path(__file__).resolve().parents[1]
 COPY={
+'Build confidence through movement, thoughtful meal planning and a community that grows with you.':'Move boldly. Grow together. Leave your mark.',
 'Live in Motion':'Impact that outlives',
-'Fitness, meal planning and style for everyday life.':'Build confidence through movement, thoughtful meal planning and a community that grows with you.',
+'Fitness, meal planning and style for everyday life.':'Move boldly. Grow together. Leave your mark.',
 'Move with purpose. Live with confidence.':'Small steps today. A lasting imprint tomorrow.',
 'Workout classes and meal plans.':'Make movement and mindful meals part of your everyday life.',
 'Founder of Fit is Lit.':'Founder of Sheba Imprint and Fit is Lit.',
