@@ -56,7 +56,7 @@ for name in ['index.html','home-preview.html','about-me.html']:
   for frame in s.select(f'.spotlight-background[data-index="{index}"],.thumbs[data-index="{index}"]'):
    frame['class']=[c for c in frame.get('class',[]) if c!='original-photo-frame']+['landscape-photo-frame']
    frame.attrs.pop('style',None)
-   img=frame.select_one('img');img['src']=f'images/brand/{file}';img['width']='1672';img['height']='941';img['style']='object-fit:contain;object-position:center'
+   img=frame.select_one('img');img['src']=f'images/brand/{file}';img['width']='1672';img['height']='941';img['style']='object-fit:cover;object-position:center'
  if name=='about-me.html':
   img=s.select_one('.founder-landscape');img['src']='images/brand/sheba-cafe-landscape.png';img['width']='1672';img['height']='941'
  p.write_text(str(s))
