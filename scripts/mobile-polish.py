@@ -60,3 +60,11 @@ for name in ['index.html','home-preview.html','about-me.html']:
  if name=='about-me.html':
   img=s.select_one('.founder-landscape');img['src']='images/brand/sheba-cafe-landscape.png';img['width']='1672';img['height']='941'
  p.write_text(str(s))
+for name in ['index.html','home-preview.html']:
+ p=D/name;s=S(p.read_text(),'html.parser')
+ if s.select_one('.spotlight-gallery') and not s.select_one('script[src="js/hero-carousel.js"]'):
+  s.body.append(S('<script defer src="js/hero-carousel.js"></script>','html.parser'))
+ p.write_text(str(s))
+p=D/'index.html';s=S(p.read_text(),'html.parser');h=s.select_one('.hero-intro .tp-hero-title')
+if h:
+ h.clear();h.append(S('<span>Impact that</span> <span>outlives</span>','html.parser'));p.write_text(str(s))

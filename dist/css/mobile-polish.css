@@ -26,3 +26,29 @@ main img{max-width:100%}
 .spotlight-gallery .landscape-photo-frame img{object-fit:cover!important;object-position:50% 50%!important}
 .spotlight-background.landscape-photo-frame img{width:100%;height:100%;object-fit:cover!important;object-position:center}
 
+/* Compact theme spacing and consistently sized product stages. */
+.sheba-theme main [class*="pt-1"]{padding-top:64px}
+.sheba-theme main [class*="pb-1"]{padding-bottom:64px}
+.sheba-footer .tp-footer-area{padding-top:64px}
+.sheba-theme .shop-product-thumb>a{aspect-ratio:440/399;background:#f3f3f1;padding:24px;display:flex;align-items:center;justify-content:center}
+.sheba-theme .shop-product-thumb img{width:100%;height:100%;object-fit:contain!important;max-height:100%}
+.sheba-theme .tp-product-details-nav-main-thumb{background:#f3f3f1;padding:24px}
+.sheba-theme .tp-product-details-nav-main-thumb img{width:100%;aspect-ratio:440/399;object-fit:contain}
+.spotlight-gallery{display:flex;overflow-x:auto;scrollbar-width:none;scroll-snap-type:none;background:transparent;backdrop-filter:none;padding:8px 0;gap:14px}
+.spotlight-gallery::-webkit-scrollbar{display:none}
+.spotlight-gallery .thumbs{flex:0 0 160px}
+.spotlight-gallery .thumbs img{width:100%;height:160px;aspect-ratio:1;object-fit:cover}
+@media(max-width:767px){
+.shiba-hero{height:auto;min-height:0}
+.hero-frame{min-height:0;gap:32px;padding-top:32px;padding-bottom:24px}
+.hero-intro .tp-hero-title{font-size:clamp(42px,11vw,66px);white-space:normal;line-height:1.02;max-width:10ch;text-wrap:initial;margin-bottom:20px}
+.hero-details{gap:18px}
+.spotlight-gallery .thumbs{flex-basis:140px}
+.spotlight-gallery .thumbs img{height:140px}
+.sheba-theme main [class*="pt-1"],.sheba-theme main>div:first-child{padding-top:36px}
+.sheba-theme main [class*="pb-1"]{padding-bottom:40px}
+.sheba-theme .tp-about-area,.sheba-theme .tp-product-details-top,.sheba-theme .tp-product-details-bottom{padding-bottom:40px}
+.sheba-footer .tp-footer-area{padding-top:40px}
+.sheba-theme .shop-product-thumb>a{padding:18px}
+}
+@media(max-width:767px){.hero-intro .tp-hero-title{max-width:none}.hero-intro .tp-hero-title>span{display:block}}
