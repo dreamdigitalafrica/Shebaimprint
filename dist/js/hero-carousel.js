@@ -16,7 +16,7 @@
  function tick(now){
   const dt=last?Math.min(now-last,50):0;last=now;
   if(!paused&&!reduced.matches&&!document.hidden){
-   const loop=gallery.scrollWidth/2;
+   const loop=gallery.children[originals.length].offsetLeft-gallery.children[0].offsetLeft;
    if(loop>gallery.clientWidth){gallery.scrollLeft+=dt*.045;if(gallery.scrollLeft>=loop)gallery.scrollLeft-=loop}
   }
   frame=requestAnimationFrame(tick);

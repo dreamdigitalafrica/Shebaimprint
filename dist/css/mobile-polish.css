@@ -62,3 +62,9 @@ main img{max-width:100%}
 .sheba-theme .shop-product-thumb img{object-fit:contain!important}
 .sheba-theme .shop-product-item{margin-bottom:38px!important}
 @media(max-width:767px){.shop-home-page .shop-hero-thumb img{aspect-ratio:918/750}.shop-home-page .shop-hero-item-3 .shop-hero-thumb img{aspect-ratio:1856/750}.shop-home-page .shop-hero-item{margin-bottom:12px!important}.shop-home-page .shop-hero-area{padding-bottom:30px}.sheba-theme .shop-product-thumb>a{aspect-ratio:440/399;padding:18px}}
+/* Product photographs are prepared to the theme's 440:399 frame. */
+.sheba-theme .shop-product-thumb>a{padding:0;background:#f5f5f3}
+.sheba-theme .shop-product-thumb img{display:block;width:100%;height:100%;object-fit:cover!important}
+.sheba-theme .tp-product-details-nav-main-thumb{padding:0;background:#f5f5f3}
+.sheba-theme .tp-product-details-nav-main-thumb img{object-fit:cover!important}
+@media(max-width:767px){.sheba-theme .shop-product-thumb>a{padding:0}}
