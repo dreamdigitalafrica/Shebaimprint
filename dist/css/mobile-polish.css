@@ -90,3 +90,14 @@ main img{max-width:100%}
 .shop-home-page .shop-cetagory-area,.shop-home-page .shop-category-area{padding-top:50px;padding-bottom:50px}
 .shop-home-page .shop-product-area{padding-top:48px;padding-bottom:55px}
 @media(max-width:767px){.shop-home-page .shop-service-area{padding-top:30px;padding-bottom:32px}.shop-home-page .shop-cetagory-area,.shop-home-page .shop-category-area{padding-top:30px;padding-bottom:30px}.shop-home-page .shop-product-area{padding-top:30px;padding-bottom:40px}}
+/* Fixed Cunnet frame ratios at every screen width, including narrow phones. */
+.shop-home-page .shop-hero-thumb{width:100%;overflow:hidden}
+.shop-home-page .shop-hero-thumb img{display:block!important;width:100%!important;height:auto!important;aspect-ratio:918/750!important;object-fit:cover!important}
+.shop-home-page .shop-hero-item-3 .shop-hero-thumb img{aspect-ratio:1856/750!important}
+.shop-home-page .shop-cetagory-item{width:100%;overflow:hidden}
+.shop-home-page .shop-cetagory-item img{display:block!important;width:100%!important;height:auto!important;aspect-ratio:598/600!important;object-fit:cover!important}
+.sheba-theme .shop-product-thumb{width:100%;overflow:hidden}
+.sheba-theme .shop-product-thumb>a{display:block!important;width:100%!important;height:auto!important;aspect-ratio:440/399!important;padding:0!important;overflow:hidden!important;background:#f5f5f3}
+.sheba-theme .shop-product-thumb>a>img{display:block!important;width:100%!important;height:100%!important;min-height:0!important;aspect-ratio:440/399!important;object-fit:cover!important;object-position:center!important}
+.sheba-theme .tp-product-details-nav-main-thumb img{display:block!important;width:100%!important;height:auto!important;aspect-ratio:440/399!important;object-fit:cover!important}
+@media(max-width:767px){.shop-home-page .shop-hero-thumb img{max-height:none!important}.shop-home-page .shop-hero-item-3 .shop-hero-thumb img{min-height:220px!important}.sheba-theme .shop-product-item{width:100%;margin-bottom:32px!important}.sheba-theme .shop-product-content-wrap{display:grid!important;grid-template-columns:minmax(0,1fr) auto;gap:12px}.sheba-theme .shop-product-title{font-size:clamp(20px,5.4vw,27px)!important;line-height:1.18!important}.sheba-theme .shop-product-price{white-space:nowrap}}
