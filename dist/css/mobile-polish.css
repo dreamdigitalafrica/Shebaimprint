@@ -52,3 +52,4 @@ main img{max-width:100%}
 .sheba-theme .shop-product-thumb>a{padding:18px}
 }
 @media(max-width:767px){.hero-intro .tp-hero-title{max-width:none}.hero-intro .tp-hero-title>span{display:block}}
+@media(max-width:767px){.spotlight-gallery{width:100%;overflow-x:auto;scroll-snap-type:x mandatory;gap:0}.spotlight-gallery .thumbs{flex:0 0 100%;scroll-snap-align:start}.spotlight-gallery .thumbs img{width:100%;height:clamp(220px,52vw,360px);aspect-ratio:16/9;object-fit:cover}}

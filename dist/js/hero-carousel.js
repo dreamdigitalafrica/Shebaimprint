@@ -16,7 +16,7 @@
   if(!paused&&!reduced.matches&&!document.hidden){
    const max=gallery.scrollWidth-gallery.clientWidth;
    if(max>0){
-    gallery.scrollLeft+=direction*dt*.025;
+    if(innerWidth<=767){const slide=gallery.querySelector(".thumbs");const width=slide?.getBoundingClientRect().width||gallery.clientWidth;if(now-(gallery.dataset.lastSlide||0)>3200){gallery.scrollTo({left:Math.round(gallery.scrollLeft/width+1)*width,behavior:"smooth"});gallery.dataset.lastSlide=now;if(gallery.scrollLeft>=max-width)gallery.scrollTo({left:0,behavior:"smooth"});}}else gallery.scrollLeft+=direction*dt*.025;
     if(gallery.scrollLeft>=max-1)direction=-1;
     if(gallery.scrollLeft<=0)direction=1;
    }
