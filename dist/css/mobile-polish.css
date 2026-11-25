@@ -53,3 +53,12 @@ main img{max-width:100%}
 }
 @media(max-width:767px){.hero-intro .tp-hero-title{max-width:none}.hero-intro .tp-hero-title>span{display:block}}
 @media(max-width:767px){.spotlight-gallery{width:100%;overflow-x:auto;scroll-snap-type:x mandatory;gap:0}.spotlight-gallery .thumbs{flex:0 0 100%;scroll-snap-align:start}.spotlight-gallery .thumbs img{width:100%;height:clamp(220px,52vw,360px);aspect-ratio:16/9;object-fit:cover}}
+/* Keep the original mobile hero layout; scroll the full thumbnail strip. */
+@media(max-width:767px){.spotlight-gallery{gap:10px;scroll-snap-type:none}.spotlight-gallery .thumbs{flex:0 0 140px;scroll-snap-align:none}.spotlight-gallery .thumbs img{width:100%;height:140px;aspect-ratio:auto;object-fit:cover}.hero-frame{grid-template-rows:auto auto}.spotlight-gallery{margin-top:8px}}
+/* Cunnet's fixed image proportions across shop breakpoints. */
+.shop-home-page .shop-hero-thumb img{width:100%;aspect-ratio:918/750;object-fit:cover}
+.shop-home-page .shop-hero-item-3 .shop-hero-thumb img{aspect-ratio:1856/750}
+.sheba-theme .shop-product-thumb>a{aspect-ratio:440/399;padding:clamp(12px,2vw,24px)}
+.sheba-theme .shop-product-thumb img{object-fit:contain!important}
+.sheba-theme .shop-product-item{margin-bottom:38px!important}
+@media(max-width:767px){.shop-home-page .shop-hero-thumb img{aspect-ratio:918/750}.shop-home-page .shop-hero-item-3 .shop-hero-thumb img{aspect-ratio:1856/750}.shop-home-page .shop-hero-item{margin-bottom:12px!important}.shop-home-page .shop-hero-area{padding-bottom:30px}.sheba-theme .shop-product-thumb>a{aspect-ratio:440/399;padding:18px}}
