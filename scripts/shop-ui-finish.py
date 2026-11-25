@@ -9,6 +9,8 @@ for p in D.glob('*.html'):
   menu=header.select_one('.site-menu')
   wrap=S('<div class="site-header-actions"><a class="site-cart-link" href="/cart.html" aria-label="View cart"><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 8h16l-1 12H5L4 8Z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></svg><span data-cart-count>0</span></a></div>','html.parser').div
   menu.wrap(wrap);wrap.insert(0,wrap.find(class_='site-cart-link'))
+ if not s.select_one('script[src^="js/store.js"]'):
+  s.body.append(S('<script defer src="js/store.js?v=2"></script>','html.parser'))
  if p.name in ('shop.html','shop-list.html'):
   grid=s.select_one('#shop-grid')
   if grid and not s.select_one('#product-sort'):
