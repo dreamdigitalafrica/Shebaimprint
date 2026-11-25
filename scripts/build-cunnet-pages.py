@@ -111,3 +111,4 @@ subprocess.run([sys.executable, str(ROOT/"scripts/update-podcast.py")], check=Tr
 subprocess.run([sys.executable, str(ROOT/"scripts/mobile-polish.py")], check=True)
 subprocess.run([sys.executable, str(ROOT / 'scripts/update-copy.py')], check=True)
 subprocess.run([sys.executable, str(ROOT / 'scripts/finish-mobile-shop.py')], check=True)
+subprocess.run([sys.executable, str(ROOT / 'scripts/shop-ui-finish.py')], check=True)
