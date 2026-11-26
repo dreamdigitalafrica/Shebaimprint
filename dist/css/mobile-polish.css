@@ -101,3 +101,10 @@ main img{max-width:100%}
 .sheba-theme .shop-product-thumb>a>img{display:block!important;width:100%!important;height:100%!important;min-height:0!important;aspect-ratio:440/399!important;object-fit:cover!important;object-position:center!important}
 .sheba-theme .tp-product-details-nav-main-thumb img{display:block!important;width:100%!important;height:auto!important;aspect-ratio:440/399!important;object-fit:cover!important}
 @media(max-width:767px){.shop-home-page .shop-hero-thumb img{max-height:none!important}.shop-home-page .shop-hero-item-3 .shop-hero-thumb img{min-height:220px!important}.sheba-theme .shop-product-item{width:100%;margin-bottom:32px!important}.sheba-theme .shop-product-content-wrap{display:grid!important;grid-template-columns:minmax(0,1fr) auto;gap:12px}.sheba-theme .shop-product-title{font-size:clamp(20px,5.4vw,27px)!important;line-height:1.18!important}.sheba-theme .shop-product-price{white-space:nowrap}}
+/* Product names and categories occupy their own lines beside the price. */
+.sheba-theme .shop-product-content{min-width:0}
+.sheba-theme .shop-product-title{display:block!important;max-width:100%;overflow:visible!important;white-space:normal;overflow-wrap:normal}
+.sheba-theme .shop-product-title a{display:inline;white-space:normal}
+.sheba-theme .shop-product-cetagory{display:block;margin-top:7px}
+.sheba-theme .shop-product-price{align-self:start}
+@media(max-width:767px){.shop-home-page .shop-product-area .tp-section-title{margin-bottom:24px}.sheba-theme .shop-product-thumb{margin-bottom:20px!important}.sheba-theme .shop-product-content-wrap{align-items:start}.sheba-theme .shop-product-price .shop-product-new-price{font-size:clamp(20px,5.4vw,24px)}}
